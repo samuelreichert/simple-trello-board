@@ -10,6 +10,14 @@ This Trello board comes with the ability to:
 * edit and move cards
 * remove cards
 
+## Setup
+
+Dependencies:
+* Node 12.2
+* Yarn
+
+Installing packages: `yarn install`
+
 ### `yarn start`
 
 Runs the app in the development mode.\
