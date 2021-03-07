@@ -26,32 +26,17 @@
   background-color: #04a0ab;
 }
 
-.add-content-input-container {
-  display: flex;
-  align-items: center;
-  padding-bottom: 12px;
+
+.add-content-button--dark {
+  color: #403e3b;
 }
 
-.add-content-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
+.add-content-button--dark:hover {
+  background-color: #d1d1d1;
 }
 
-.add-content-input {
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  padding: 8px;
-  flex: 1;
-}
 
-.close-button {
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 26px;
-  margin-top: -6px;
-  margin-left: 12px;
-  padding: 0;
+.add-content-button--dark,
+.close-button--dark {
+  color: #403e3b;
 }
