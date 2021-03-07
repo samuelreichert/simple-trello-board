@@ -11,21 +11,3 @@
 .app__title {
   color: #ffffff;
 }
-
-.columns-list {
-  display: flex;
-  flex-direction: row;
-}
-
-.column {
-  border-radius: 4px;
-  background-color: #eaeaea;
-  color: #403e3b;
-  margin-right: 8px;
-  width: 280px;
-  padding: 12px 16px;
-}
-
-.column--add {
-  background-color: rgba(0,0,0,0.4);
-}
