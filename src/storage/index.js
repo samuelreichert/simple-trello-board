@@ -5,5 +5,5 @@ export const updateStorage = (data) => {
 
 export const fetchStorage = () => {
   const data = localStorage.getItem('columnsList');
-  return JSON.parse(data);
+  return JSON.parse(data) ?? [];
 };
