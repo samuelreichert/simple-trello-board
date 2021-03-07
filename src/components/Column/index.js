@@ -13,11 +13,12 @@ const Column = ({ title, cards = [], position, setColumns, updateCards }) => {
   }, [cards]);
 
   const onSaveCard = (content) => {
-    const newCards = [...columnCards];
-    newCards.push(content);
+    const newCards = [
+      ...columnCards,
+      content
+    ];
 
-    setColumnCards(newCards);
-    updateCards(title, position, newCards);
+    updateColunnCards(newCards);
   };
 
   const onEditCard = (oldContent, newContent) => {
@@ -25,6 +26,10 @@ const Column = ({ title, cards = [], position, setColumns, updateCards }) => {
       return card === oldContent ? newContent : card;
     });
 
+    updateColunnCards(newCards);
+  };
+
+  const updateColunnCards = (newCards) => {
     setColumnCards(newCards);
     updateCards(title, position, newCards);
   };

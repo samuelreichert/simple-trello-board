@@ -11,15 +11,21 @@ const Columns = () => {
   const [columns, setColumns] = useState(data ?? []);
 
   const onSaveColumn = (title) => {
-    const newColumns = [...columns];
-    newColumns.push({ title, cards: [], position: parseInt(newColumns.length + '0') });
-    setColumns(newColumns);
-    updateStorage(newColumns);
+    const newColumns = [
+      ...columns,
+      { title, cards: [], position: parseInt(columns.length + '0') }
+    ];
+
+    updateColumns(newColumns);
   };
 
   const onUpdateCards = (title, position, newCards) => {
     const newColumns = columns.filter((column) => column.title !== title);
     newColumns.push({ title, cards: newCards, position });
+    updateColumns(newColumns);
+  };
+
+  const updateColumns = (newColumns) => {
     setColumns(newColumns);
     updateStorage(newColumns);
   };
@@ -37,7 +43,7 @@ const Columns = () => {
           position={column.position}
           title={column.title}
           updateCards={onUpdateCards}
-          setColumns={setColumns}
+          setColumns={updateColumns}
         />
       ))}
       <div className='column column--add'>

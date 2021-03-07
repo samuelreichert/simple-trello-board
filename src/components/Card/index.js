@@ -4,7 +4,7 @@ import ContentForm from '../ContentForm';
 import DropDown from '../Dropdown';
 import DeleteIcon from '../../svgs/delete-icon';
 import RightIcon from '../../svgs/right-icon';
-import { fetchStorage, updateStorage } from '../../storage';
+import { fetchStorage } from '../../storage';
 
 import './Card.css';
 
@@ -30,7 +30,6 @@ const Card = ({ column, onEditCard, title, setColumns }) => {
     });
 
     setColumns(newColumns);
-    updateStorage(newColumns);
   };
 
   const onSelectColumnToMove = (newColumn) => {
@@ -53,8 +52,12 @@ const Card = ({ column, onEditCard, title, setColumns }) => {
     });
 
     setColumns(newColumns);
-    updateStorage(newColumns);
     setIsMoveOpen(false);
+  };
+
+  const onUpdateCardContent = (content) => {
+    onEditCard(title, content);
+    setEditCardOpen(false);
   };
 
   if (editCardOpen === false) {
@@ -78,11 +81,6 @@ const Card = ({ column, onEditCard, title, setColumns }) => {
       </div>
     );
   }
-
-  const onUpdateCardContent = (content) => {
-    onEditCard(title, content);
-    setEditCardOpen(false);
-  };
 
   return (
     <ContentForm
